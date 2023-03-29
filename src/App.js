@@ -5,7 +5,9 @@ import './App.css';
 
 function App() {
   function fetchMoviesHandler() {
-    fetch('https://swapi.dev/api/films');
+    fetch('https://swapi.dev/api/films').then(response => {
+      response.
+    });
   }
 
   return (
