@@ -19,7 +19,7 @@ import './App.css';
 
     const data = await response.json();
 
-    const transformedMovies = data.results.map(movieData => {
+    const transformedMovies = data.results.map((movieData) => {
         return {
           id: movieData.episode_id,
           title: movieData.title,
@@ -42,7 +42,7 @@ import './App.css';
       <section>
         {!isLoading && movies.length > 0 && <MoviesList movies={movies} />}
         {!isLoading && movies.length === 0 && !error && <p>Found no movies.</p>}
-        {!isLoading && error && <p>{Error}</p>}
+        {!isLoading && error && <p>{error}</p>}
         {isLoading && <p>Loading...</p>}
         
       </section>
