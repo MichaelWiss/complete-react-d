@@ -32,6 +32,7 @@ import './App.css';
     } catch (error) {
       setError(error.message);
     }
+    setIsLoading(false);
   }
 
   return (
@@ -42,7 +43,7 @@ import './App.css';
       <section>
         {!isLoading && movies.length > 0 && <MoviesList movies={movies} />}
         {!isLoading && movies.length === 0 && <p>Found no movies.</p>}
-        {!isLoading && error <p>{Error}</p>}
+        {!isLoading && error && <p>{Error}</p>}
         {isLoading && <p>Loading...</p>}
         
       </section>
