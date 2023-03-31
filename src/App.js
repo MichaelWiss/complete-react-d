@@ -16,12 +16,10 @@ import './App.css';
       if (!response.ok) {
         throw new Error('Something went wrong');
     }
-    
+
     const data = await response.json();
 
-      
-    
-      const transformedMovies = data.results.map(movieData => {
+    const transformedMovies = data.results.map(movieData => {
         return {
           id: movieData.episode_id,
           title: movieData.title,
@@ -30,7 +28,6 @@ import './App.css';
         };
       });
       setMovies(transformedMovies);
-      setIsLoading(false);
     } catch (error) {
       setError(error.message);
     }
@@ -44,7 +41,7 @@ import './App.css';
       </section>
       <section>
         {!isLoading && movies.length > 0 && <MoviesList movies={movies} />}
-        {!isLoading && movies.length === 0 && <p>Found no movies.</p>}
+        {!isLoading && movies.length === 0 && !error && <p>Found no movies.</p>}
         {!isLoading && error && <p>{Error}</p>}
         {isLoading && <p>Loading...</p>}
         
