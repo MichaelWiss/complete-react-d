@@ -20,7 +20,15 @@ function App() {
 
       const data = await response.json();
 
-      const transformedMovies = data.results.map((movieData) => {
+      const loadedMovies = [];
+
+      for (const key in data) {
+        loadedMovies.push({
+
+        });
+      }
+
+      const transformedMovies = data.map((movieData) => {
         return {
           id: movieData.episode_id,
           title: movieData.title,
