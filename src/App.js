@@ -63,7 +63,6 @@ function App() {
   if (error) {
     content = <p>{error}</p>;
   }
-  
 
   if (isLoading) {
     content = <p>Loading...</p>;
